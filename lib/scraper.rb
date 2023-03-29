@@ -1,4 +1,7 @@
-require 'nokogiri'
-require 'open-uri'
+require "nokogiri"
+require "open-uri"
 
 html = open("https://flatironschool.com/")
+
+doc = Nokogiri.HTML(html)
+puts doc.css(".heading-primary").text.strip
